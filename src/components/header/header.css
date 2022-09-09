@@ -1,14 +1,28 @@
-header {
-    height: 100vh;
-    padding-top: 3rem;
+#header {
+    display: grid;
+    height: 100vmin;
+    grid-template-columns: 1fr 1fr;        
     overflow: hidden;
+    position: relative;
+    margin-top: 0;
+
 }
 
 .header__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     height: 100%;
     position: relative;
 }
+
+.header__container h2 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+
 
 /* =============== CTA ============== */
 
@@ -16,69 +30,139 @@ header {
     margin-top: 1.5rem;
     display: flex;
     gap: 1.2rem;
-    justify-content: center;
+    justify-content: center;    
 }
+
+
 
 /* =============== HEADER SOCIALS ============== */
 
 .header__socials {
     display: flex;
-    flex-direction: column;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    justify-content: center;
     align-items: center;
-    gap: 0.8rem;
-    position: absolute;
-    left: 0;
+    gap: 0.8rem;    
+    left: 0;    
     bottom: 3rem;
 }
 
-.header__socials::after {
-    content: '';
-    width: 1px;
-    height: 2rem;
-    background-color: var(--color-primary);
+.header__socials a:hover {
+    transform: scale(120%);
 }
 
 /* =============== ME ============== */
-
-.me {
-    background: linear-gradient(var(--color-primary), transparent);
-    width: 22rem;
-    height: 30rem;
-    position: absolute;
-    left: calc(50% - 11rem);
-    margin-top: 4rem;
-    border-radius: 12rem 12rem 0 0;
-    overflow: hidden;
-    padding: 5rem 1.5rem 1.5rem 1.5rem;
+.container__me {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-/* =============== SCROLL DOWN ============== */
+.me {
+    background: var(--color-primary); 
+    z-index: 1000;   
+    border-radius: 39% 61% 69% 31% / 58% 39% 61% 42%;
+    width: 28rem;
+    height: 28rem; 
+    overflow: hidden;
+     
+}
 
-.scroll__down {
-    position: absolute;
-    right: -2.3rem;
-    bottom: 5rem;
-    transform: rotate(90deg);
-    font-weight: 300;
-    font-size: 0.9rem;
+.me2 {
+    border: 2px solid var(--color-light);
+    rotate: 45deg;
+    position: absolute;   
+    border-radius: 47% 53% 69% 31% / 70% 63% 37% 30%;
+    width: 31rem;
+    height: 31rem; 
+    overflow: hidden;
+    animation: rotar1 25s infinite;
+    animation-timing-function: linear;
+    box-shadow: 3px 3px 10px 2px rgba(238, 238, 238, 0.2), inset 3px 3px 10px 2px rgba(238, 238, 238, 0.2);   
+}
 
+
+.me3 {
+    border: 2px solid var(--color-primary);
+    rotate: 90deg;
+    position: absolute;   
+    border-radius: 75% 25% 25% 75% / 66% 63% 37% 34%;
+    width: 32rem;
+    height: 32rem; 
+    overflow: hidden;
+    animation: rotar1 43s infinite;
+    animation-direction: reverse;
+    animation-timing-function: linear;
+    box-shadow: 3px 3px 10px 2px rgba(167, 255, 131, 0.2), inset 3px 3px 10px 2px rgba(167, 255, 131, 0.2);
+}
+
+.me4 {
+    border: 2px solid var(--color-primary-variant);
+    rotate: 120deg;
+    position: absolute;   
+    border-radius: 39% 61% 69% 31% / 58% 39% 61% 42%;
+    width: 33rem;
+    height: 33rem; 
+    overflow: hidden;
+    animation: rotar1 68s infinite;
+    animation-direction: reverse;
+    animation-timing-function:linear;
+    box-shadow: 3px 3px 10px 2px rgba(23, 185, 120, 0.2), inset 3px 3px 10px 2px rgba(23, 185, 120, 0.2);   
+}
+
+@keyframes rotar1 {
+    0% {
+        rotate: 0deg;
+    }
+    50%{
+        rotate: 720deg;
+    }
+    100%{
+        rotate: 0deg;
+    }
 }
 
 /* ================ MEDIA QUERIES (TABLETS) ================ */
 
 @media screen and (max-width: 1024px) {
-    header {
-    height: 68vh;
+    #header {
+    height: 100vh;
+    margin-top: 0;
+    }  
+
+    .me {
+        width: 20rem;
+        height: 20rem;
     }
+
+    .me2 {
+        width: 23rem;
+        height: 23rem; 
+    }
+
+    .me3 {
+        width: 24rem;
+        height: 24rem; 
+    }
+
+    .me4 {
+        width: 25rem;
+        height: 25rem; 
+    }
+    
 }
 
 /* ================ MEDIA QUERIES (MOBILE) ================ */
 
 @media screen and (max-width: 600px) {
-    header {
-        height: 100vh;
+    
+    #header {
+        grid-template-columns: 1fr;
+        overflow:visible;                     
     }
-
+    
     .header__socials, .scroll__down {
         display: none;
     }    

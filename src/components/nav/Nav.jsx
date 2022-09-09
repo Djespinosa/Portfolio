@@ -8,16 +8,31 @@ import {RiMessage2Fill} from 'react-icons/ri'
 import { useState } from 'react'
 
 const Nav = () => {
-  const [activeNav, setActiveNav] = useState('#')
+  
+  const sections = document.querySelectorAll('section');
+  const [activeNav, setActiveNav] = useState('#header');    
+
+  window.onscroll = ()=>{ 
+    const scrollPosition = document.documentElement.scrollTop;
+    sections.forEach(section =>{
+      if(scrollPosition >= section.offsetTop - section.offsetHeight*0.4 &&
+        scrollPosition < section.offsetTop + section.offsetHeight - section.offsetHeight*0.3
+        ){
+          const currentId = section.attributes.id.value;
+          setActiveNav('#'+currentId);           
+        }
+      }); 
+    }
+
   return (
     <nav>
-      <a href="#" onClick={()=> setActiveNav('#')} className={activeNav === '#' ? 'active' : ''} ><AiFillHome /></a>
-      <a href="#about" onClick={()=> setActiveNav('#about')} className={activeNav === '#about' ? 'active' : ''} ><FaUserAlt /></a>
-      <a href="#experience" onClick={()=> setActiveNav('#experience')} className={activeNav === '#experience' ? 'active' : ''}><RiServiceFill /></a>
-      <a href="#portfolio" onClick={()=> setActiveNav('#portfolio')} className={activeNav === '#portfolio' ? 'active' : ''}><FaBook /></a>  
-      <a href="#contact" onClick={()=> setActiveNav('#contact')} className={activeNav === '#contact' ? 'active' : ''}><RiMessage2Fill /></a>
+      <a href="#header" onClick={()=> setActiveNav('#header')} className={activeNav === '#header' ? 'active':''}  ><AiFillHome /></a>
+      <a href="#about" onClick={()=> setActiveNav('#about')} className={activeNav === '#about' ? 'active':  ''}  ><FaUserAlt /></a>
+      <a href="#experience" onClick={()=> setActiveNav('#experience')} className={activeNav === '#experience' ? 'active':''}><RiServiceFill /></a>
+      <a href="#portfolio" onClick={()=> setActiveNav('#portfolio')} className={activeNav === '#portfolio' ? 'active':''}><FaBook /></a>  
+      <a href="#contact" onClick={()=> setActiveNav('#contact')} className={activeNav === '#contact' ? 'active':''}><RiMessage2Fill /></a>
     </nav>
   )
-}
+  }
 
 export default Nav

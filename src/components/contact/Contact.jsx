@@ -2,10 +2,28 @@ import React from 'react'
 import './contact.css'
 import {AiOutlineMail} from 'react-icons/ai'
 import {ImWhatsapp} from 'react-icons/im'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import emailjs from 'emailjs-com'
 
 const Contact = () => {
+  
+  const [opacity, setOpacity] = useState('');
+	const sectionRef = useRef();
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const section = sectionRef.current
+			const { y } = section.getBoundingClientRect();
+			const opacitySection = y <= 500 ? '#portfolio' : '';
+			setOpacity(opacitySection)			
+		}
+		window.addEventListener('scroll', handleScroll)
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		}
+	})
+  
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -19,7 +37,7 @@ const Contact = () => {
     e.target.reset();
   };
   return (
-    <section id='contact'>
+    <section id='contact' className={opacity === '' ? '': 'active'} ref={sectionRef}>
       <h5>Get in tounch</h5>
       <h2>Contact Me</h2>
       <div className="container contact__container">
@@ -27,14 +45,14 @@ const Contact = () => {
           <article className='contact__option'>
             <AiOutlineMail className='contact__option-icon'/>
             <h4>Email</h4>
-            <h5>deymerespinosap@gamil.com</h5>
-            <a href="mailto:deymerespinosap@gamil.com">Send a message</a>
+            <h5>deymerespinosap@gmail.com</h5>
+            <a href="mailto:deymerespinosap@gmail.com">Send a message</a>
           </article>
           <article className='contact__option'>
             <ImWhatsapp className='contact__option-icon'/>
             <h4>WhatsApp</h4>
             <h5>(+57)301 555 3504</h5>
-            <a href="https://api.whatsapp.com/send?phone=573043753324" target='_blank' rel='noopener noreferrer'>Send a message</a>
+            <a href="https://api.whatsapp.com/send/?phone=573015553504&text&type=phone_number&app_absent=0" target='_blank' rel='noopener noreferrer'>Send a message</a>
           </article>
         </div>
         <form ref={form} onSubmit = {sendEmail}>

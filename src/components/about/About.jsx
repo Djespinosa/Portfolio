@@ -1,47 +1,66 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './about.css'
 import ME from '../../assets/fotoDeymer.png'
 import {FaAward} from 'react-icons/fa'
-import {FaUserFriends} from 'react-icons/fa'
+import {MdLanguage} from 'react-icons/md'
 import {MdCastForEducation} from 'react-icons/md'
 
 const About = () => {
+	const [opacity, setOpacity] = useState('');
+	const sectionRef = useRef();
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const section = sectionRef.current
+			const { y } = section.getBoundingClientRect();
+			const opacitySection = y <= 500 ? '#about' : '';
+			setOpacity(opacitySection)			
+		}
+		window.addEventListener('scroll', handleScroll)
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		}
+	})
   return (
-    <section id='about'>
+    <section id='about' className={opacity === '' ? '': 'active'} ref={sectionRef}>
 		<h5>Get to Know</h5>
 		<h2>About me</h2>
 		<div className="container about__container">
 			<div className="about__me">
 				<div className="about__me-image">
 					<img src={ME} alt='me' />
-				</div>
+				</div>				
 			</div>
 			<div className="about__content">
 				<div className="about__cards">
 					<article className='about__card'>
 						<FaAward className='about__icon'/>
 						<h5>Experience</h5>
-						<small>6 months of experience</small>
+						<small>6 months of experience.<br/></small>
+						<small>Obtained in the elaboration of an integrating project as a degree option in Digital House.</small>
 					</article>
 
 					<article className='about__card'>
-						<FaUserFriends className='about__icon'/>
-						<h5>Clients</h5>
-						<small>+100 clients</small>
+						<MdLanguage className='about__icon'/>
+						<h5>Languages</h5>
+						<small>* Spanish - Native Language.<br/></small>
+						<small>* English - I am in training.</small>
 					</article>
 
 					<article className='about__card'>
 						<MdCastForEducation className='about__icon'/>
 						<h5>Education</h5>
-						<small>Fullstack developer </small>
-						<small>Industrial Engineer </small>
-						<small>Specialist in business management</small>
+						<small>+Fullstack Developer<br/></small>
+						<small>+Industrial Engineer<br/></small>
+						<small>+Specialist in business management</small>
 					</article>
 				</div>
 				<p>
-				Desarrollador Web Full Stack con una gran motivación para crecer profesionalmente en el amplio mundo del desarrollo web, me apasiona todo lo que se puede crear desde la programación y saber que puedo llegar a ser una pieza clave en el funcionamiento de una gran tecnología. Por mi parte, estoy dispuesto a dar lo mejor de mi en cualquier posición que ocupe, puedo referir entre mis habilidades, un buen aprendizaje autónomo, orientación al logro, trabajo en equipo y alta curva de aprendizaje. Tengo interés en puestos de Desarrollo Fullstack, Frontend ó Backend, donde pueda mostrar al 100% mis capacidades con el fin de generar valor a la compañía.
-				</p>
-				<a href="#contact" className='btn btn-primary'>Let's Talk</a>
+				Full Stack Web Developer with a great motivation to grow professionally in the wide world of web development. <br/>
+				<br/>I'm passionate about everything that can be created from programming and knowing that I can become a key piece in the operation of great technology.<br/>
+				<br/>I'm willing to give my best in any position I hold. I can refer to my skills as good autonomous learning, achievement orientation, teamwork and a high learning curve. I am interested in Fullstack, Frontend or Backend Development positions, where I can show 100% of my capabilities in order to generate value for the company.
+				</p>				
 			</div>		
 		</div>
     </section>

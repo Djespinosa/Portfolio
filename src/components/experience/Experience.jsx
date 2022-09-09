@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './experience.css'
 import {BsPatchCheckFill} from 'react-icons/bs'
+
 const Experience = () => {
+  const [opacity, setOpacity] = useState('');
+	const sectionRef = useRef();
+
+  useEffect(() => {
+		const handleScroll = () => {
+			const section = sectionRef.current
+			const { y } = section.getBoundingClientRect();
+			const opacitySection = y <= 500 ? '#experience' : '';
+			setOpacity(opacitySection)			
+		}
+		window.addEventListener('scroll', handleScroll)
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		}
+	})
+
   return (
-    <section id='experience'>
+    <section id='experience' className={opacity === '' ? '': 'active'} ref={sectionRef}>
       <h5>What skills i have</h5>
       <h2>My experience</h2>
       <div className="container experience__container">

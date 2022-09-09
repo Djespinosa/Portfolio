@@ -1,7 +1,6 @@
 import React from 'react'
 import CV from '../../assets/HVDeymer.Espinosa2022.pdf'
 
-
 const CTA = () => {
   return (
     <div className='cta'>

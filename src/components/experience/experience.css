@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    margin: 0 2rem;
 }
 
 .experience__container > div {
@@ -14,7 +15,7 @@
 
 .experience__container > div:hover {
     background: transparent;
-    border: var(--color-primary-variant);
+    border: 1px solid var(--color-primary-variant);
     cursor: default;
 }
 
@@ -33,6 +34,15 @@
 .experience__details {
     display: flex;
     gap: 1rem;
+}
+
+@keyframes rotar {
+    from {
+        
+    }
+    to{
+        rotate: 360deg;
+    }
 }
 
 .experience__details-icon {

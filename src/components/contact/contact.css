@@ -1,14 +1,15 @@
 .contact__container {
-    width: 58%;
     display: grid;
     grid-template-columns: 30% 58%;
+    place-items: center;
     gap: 12%;
+    margin: 0 2rem;
 }
 
 .contact__options {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem; 
 }
 
 .contact__option {
@@ -41,7 +42,8 @@
 form {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;    
+    gap: 1.2rem;
+    width: 90%; 
 }
 
 input, textarea {
