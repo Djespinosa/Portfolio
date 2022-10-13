@@ -10,7 +10,7 @@ const Experience = () => {
 		const handleScroll = () => {
 			const section = sectionRef.current
 			const { y } = section.getBoundingClientRect();
-			const opacitySection = y <= 500 ? '#experience' : '';
+			const opacitySection = y <= 600 ? '#experience' : '';
 			setOpacity(opacitySection)			
 		}
 		window.addEventListener('scroll', handleScroll)

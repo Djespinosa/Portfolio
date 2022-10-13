@@ -22,7 +22,7 @@ const Portfolio = () => {
 		const handleScroll = () => {
 			const section = sectionRef.current
 			const { y } = section.getBoundingClientRect();
-			const opacitySection = y <= 500 ? '#portfolio' : '';
+			const opacitySection = y <= 600 ? '#portfolio' : '';
 			setOpacity(opacitySection)			
 		}
 		window.addEventListener('scroll', handleScroll)

@@ -11,13 +11,11 @@
 }
 
 :root {
-    --color-bg: #04123D;
-    --color-bg-variant: #071A52;
-    --color-primary: #A7FF83;
-    --color-primary-variant: #17B978;
+    --color-bg: #2C2E43;
+    --color-bg-variant: #595260;
+    --color-primary: #FFD523;
     --color-white: #fff;
-    --color-light: #EEEEEE;
-    --color-light-variant: #004d80;
+    --color-light: #B2B1B9;
 
     --transition: all 400ms ease;
     
@@ -33,10 +31,11 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: var(--color-bg);
+    background: rgb(0,0,0);
     color: var(--color-white);
     line-height: 1.7;
-    background-image:url('../src/assets/background-texture.png');
+    background-image: url('../src/assets/background-texture.png');
+    background-size: auto;
     
 }
 
@@ -52,7 +51,7 @@ h1 {
 
 section {
     position: relative;
-    margin-top: 8rem;
+    padding-top: 90px;
     opacity: 0;
     transition: all 500ms ease-in;    
 }
@@ -91,31 +90,31 @@ a:hover {
 .btn {
     width: max-content;    
     display: inline-block;
-    color: var(--color-primary);
+    color: var(--color-light);
     padding: 0.75rem 1.2rem;
     border-radius: 0.4rem;
     cursor: pointer;
-    border: 1px solid var(--color-primary);
     transition: var(--transition);
-    box-shadow: inset -3px -3px 4px 3px rgba(167, 255, 131, 0.3),
-       inset 2px 2px 2px 1px rgba(23, 185, 120, 0.2);   
+    box-shadow: inset -3px -3px 4px 3px rgba(255, 255, 255, 0.3),
+       inset 2px 2px 2px 1px rgba(255, 255, 255, 0.2);   
 }
 
 .btn:hover {
-    color: var(--color-primary);
+    background-color: rgba(255, 255, 255, 0.2);
     box-shadow: none;
     transform: scale(110%);
 }
 
 .btn-primary {
-    background-image: linear-gradient(to right, var(--color-primary), var(--color-primary-variant));
-    color: var(--color-bg);
-    box-shadow: inset -5px -5px 5px 3px rgba(255, 255, 255, 0.2), inset 3px 3px 5px 4px rgba(0, 95, 115, 0.3);
+    color: var(--color-primary);
+    background: transparent;
+    box-shadow: inset -3px -3px 4px 3px rgba(255, 213, 35, 0.2), inset 2px 2px 2px 1px rgba(255, 213, 35, 0.3);
     border: none;    
 }
 
 .btn-primary:hover {
-    color: var(--color-bg);
+    color: var(--color-primary);
+    background-color: rgba(255, 213, 35, 0.2);
     border-color: transparent;
     box-shadow: none;
     transform: scale(110%);

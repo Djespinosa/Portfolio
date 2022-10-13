@@ -21,9 +21,7 @@ const Header = () => {
         <div className="me2">          
         </div>
         <div className="me3">        
-        </div>
-        <div className="me4">          
-        </div>
+        </div>        
       </div>
     </section>
   )

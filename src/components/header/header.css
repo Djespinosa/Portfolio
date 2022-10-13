@@ -61,12 +61,14 @@
 }
 
 .me {
-    background: var(--color-primary); 
+    background: rgba(89, 82, 96, 0.4);
+    backdrop-filter: blur(4px);
     z-index: 1000;   
     border-radius: 39% 61% 69% 31% / 58% 39% 61% 42%;
-    width: 28rem;
-    height: 28rem; 
+    width: 25rem;
+    height: 25rem; 
     overflow: hidden;
+    box-shadow: 3px 3px 10px 2px rgba(238, 238, 238, 0.2), inset 3px 3px 10px 2px rgba(238, 238, 238, 0.2);  
      
 }
 
@@ -75,8 +77,8 @@
     rotate: 45deg;
     position: absolute;   
     border-radius: 47% 53% 69% 31% / 70% 63% 37% 30%;
-    width: 31rem;
-    height: 31rem; 
+    width: 26rem;
+    height: 26rem; 
     overflow: hidden;
     animation: rotar1 25s infinite;
     animation-timing-function: linear;
@@ -89,27 +91,13 @@
     rotate: 90deg;
     position: absolute;   
     border-radius: 75% 25% 25% 75% / 66% 63% 37% 34%;
-    width: 32rem;
-    height: 32rem; 
+    width: 27rem;
+    height: 27rem; 
     overflow: hidden;
     animation: rotar1 43s infinite;
     animation-direction: reverse;
     animation-timing-function: linear;
-    box-shadow: 3px 3px 10px 2px rgba(167, 255, 131, 0.2), inset 3px 3px 10px 2px rgba(167, 255, 131, 0.2);
-}
-
-.me4 {
-    border: 2px solid var(--color-primary-variant);
-    rotate: 120deg;
-    position: absolute;   
-    border-radius: 39% 61% 69% 31% / 58% 39% 61% 42%;
-    width: 33rem;
-    height: 33rem; 
-    overflow: hidden;
-    animation: rotar1 68s infinite;
-    animation-direction: reverse;
-    animation-timing-function:linear;
-    box-shadow: 3px 3px 10px 2px rgba(23, 185, 120, 0.2), inset 3px 3px 10px 2px rgba(23, 185, 120, 0.2);   
+    box-shadow: 3px 3px 10px 2px rgba(255, 213, 35, 0.2), inset 3px 3px 10px 2px rgba(255, 213, 35, 0.2);
 }
 
 @keyframes rotar1 {
@@ -145,13 +133,7 @@
     .me3 {
         width: 24rem;
         height: 24rem; 
-    }
-
-    .me4 {
-        width: 25rem;
-        height: 25rem; 
-    }
-    
+    }    
 }
 
 /* ================ MEDIA QUERIES (MOBILE) ================ */
@@ -165,5 +147,20 @@
     
     .header__socials, .scroll__down {
         display: none;
-    }    
+    }
+
+    .me {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .me2 {
+        width: 16rem;
+        height: 16rem; 
+    }
+
+    .me3 {
+        width: 17rem;
+        height: 17rem; 
+    }
 }

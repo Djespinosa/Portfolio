@@ -13,7 +13,9 @@
 }
 
 .contact__option {
-    background: var(--color-bg-variant);
+    background: rgba(178, 177, 185, 0.3);
+    box-shadow: inset -3px -3px 4px 3px rgba(255, 255, 255, 0.3),
+       inset 2px 2px 2px 1px rgba(255, 255, 255, 0.2);
     padding: 1.2rem;
     border-radius: 1.2rem;
     text-align: center;
@@ -23,7 +25,8 @@
 
 .contact__option:hover {
     background: transparent;
-    border-color: var(--color-primary-variant);
+    border-color: var(--color-primary);
+    box-shadow: inset -3px -3px 4px 3px rgba(255, 213, 35, 0.2), inset 2px 2px 2px 1px rgba(255, 213, 35, 0.3);
 } 
 
 .contact__option-icon {
@@ -50,9 +53,10 @@ input, textarea {
     width: 100%;
     padding: 1.5rem;
     border-radius: 0.5rem;
-    background: transparent;
-    border: 2px solid var(--color-primary-variant);
+    border-color: var(--color-primary);
+    box-shadow: inset -3px -3px 4px 3px rgba(255, 213, 35, 0.2), inset 2px 2px 2px 1px rgba(255, 213, 35, 0.3);
     resize: none;
+    background: transparent;
     color: var(--color-white);
 }
 

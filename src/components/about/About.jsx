@@ -13,7 +13,7 @@ const About = () => {
 		const handleScroll = () => {
 			const section = sectionRef.current
 			const { y } = section.getBoundingClientRect();
-			const opacitySection = y <= 500 ? '#about' : '';
+			const opacitySection = y <= 600 ? '#about' : '';
 			setOpacity(opacitySection)			
 		}
 		window.addEventListener('scroll', handleScroll)
@@ -45,7 +45,7 @@ const About = () => {
 						<MdLanguage className='about__icon'/>
 						<h5>Languages</h5>
 						<small>* Spanish - Native Language.<br/></small>
-						<small>* English - I am in training.</small>
+						<small>* English - Level B1 - I am in training.</small>
 					</article>
 
 					<article className='about__card'>
